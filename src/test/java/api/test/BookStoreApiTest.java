@@ -5,8 +5,10 @@ import model.UserData;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Tag("apiTests")
 public class BookStoreApiTest {
     private static final String URL = "https://demoqa.com/";
 

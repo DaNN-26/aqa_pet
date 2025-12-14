@@ -4,12 +4,14 @@ import model.UserData;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import web.base.BaseTest;
 import web.pages.BooksPage;
 import web.pages.LoginPage;
 import web.pages.ProfilePage;
 
+@Tag("uiTests")
 public class BookStoreUiTest extends BaseTest {
     private static final String URL = "https://demoqa.com/";
 
