@@ -18,9 +18,6 @@ public abstract class BaseTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--start-maximized");
         Configuration.browserCapabilities = options;
-
-        Configuration.browser = "chrome";
-        Configuration.browserSize = "1920x1080";
         Configuration.headless = true;
         Configuration.timeout = 20000;
         Configuration.pageLoadStrategy = "none";
