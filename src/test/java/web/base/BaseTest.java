@@ -22,6 +22,7 @@ public abstract class BaseTest {
         Configuration.timeout = 20000;
         Configuration.pageLoadStrategy = "none";
         Configuration.pageLoadTimeout = 0;
+        Configuration.baseUrl = "http://localhost:8090";
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
