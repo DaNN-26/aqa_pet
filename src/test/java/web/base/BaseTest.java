@@ -11,8 +11,7 @@ import org.junit.jupiter.api.BeforeAll;
 public abstract class BaseTest {
 
     private static void setup() {
-        WebDriverManager.edgedriver().setup();
-        Configuration.browser = "edge";
+        Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
         Configuration.headless = false;
         Configuration.timeout = 20000;
