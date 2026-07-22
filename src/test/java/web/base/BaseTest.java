@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public abstract class BaseTest {
 
     private static void setup() {
-        Configuration.remote = "http://localhost:4444/wd/hub";
+        Configuration.remote = "http://selenoid:4444/wd/hub";
         Configuration.browser = "chrome";
         Configuration.headless = false;
         Configuration.browserSize = "1920x1080"; // рекомендуем установить размер
