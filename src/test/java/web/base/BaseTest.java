@@ -12,17 +12,25 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public abstract class BaseTest {
 
     private static void setup() {
-        WebDriverManager.chromedriver().setup();
+        Configuration.remote = "http://localhost:4444/wd/hub";
+        Configuration.browser = "chrome";
+        Configuration.headless = false;
+        Configuration.browserSize = "1920x1080"; // рекомендуем установить размер
+
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--start-maximized");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1920,1080");
+
         Configuration.browserCapabilities = options;
-        Configuration.headless = true;
+
         Configuration.timeout = 20000;
-        Configuration.pageLoadStrategy = "none";
-        Configuration.pageLoadTimeout = 0;
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        Configuration.pageLoadStrategy = "eager";
+        SelenideLogger.addListener(
+                "AllureSelenide", new AllureSelenide()
+                        .screenshots(true)
+        );
     }
 
     @BeforeAll
